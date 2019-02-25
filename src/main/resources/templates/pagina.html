@@ -1,30 +1,29 @@
-<!DOCTYPE html PUBLIC "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
-<html lang="en" xml:base="">
+<!DOCTYPE html>
+<html lang="en">
 <head>
 <title>Curriculum Vitae</title>
 
 <meta name="viewport" content="width=device-width"/>
 <meta name="description" content="The Curriculum Vitae"/>
 <meta charset="UTF-8">
-	<<link href="../static/css/style.css" th:href="@{/css/style.css}" rel="stylesheet" />>
+	<link href="../static/css/style.css" th:href="@{/css/style.css}" rel="stylesheet" />
 </head>
 <body id="top">
 <div id="cv" class="instaFade">
 	<div class="mainDetails">
-		<div id="headshot" class="quickFade">
-			<img src="../headshot.jpg" alt="Raquel" />
-		</div>
-		
+        <div id="headshot" class="quickFade">
+            <img th:src="@{/css/logo.jpg}" alt="logo" />
+        </div>
 		<div id="name">
 			<h1 class="quickFade delayTwo" th:text="${per.nombre}"></h1>
-			<h2 class="quickFade delayThree">Job Title</h2>
+			<h2 class="quickFade delayThree" th:text="${per.ocupacion}" ></h2>
 		</div>
 		
 		<div id="contactDetails" class="quickFade delayFour">
 			<ul>
-				<li>e: <a href="mailto:joe@bloggs.com" target="_blank">joe@bloggs.com</a></li>
-				<li>w: <a href="http://www.bloggs.com">www.bloggs.com</a></li>
-				<li>m: 01234567890</li>
+				<li>correo: <a target="_blank" th:text="${per.correo}" ></a></li>
+				<li>sitio web: <a th:text="${per.sitio}"> </a></li>
+				<li>contacto:<a th:text="${per.contacto}"> </a></li>
 			</ul>
 		</div>
 		<div class="clear"></div>
@@ -34,11 +33,11 @@
 		<section>
 			<article>
 				<div class="sectionTitle">
-					<h1>Personal Profile</h1>
+					<h1>Información Personal</h1>
 				</div>
 				
 				<div class="sectionContent">
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer dolor metus, interdum at scelerisque in, porta at lacus. Maecenas dapibus luctus cursus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ultricies massa et erat luctus hendrerit. Curabitur non consequat enim. Vestibulum bibendum mattis dignissim. Proin id sapien quis libero interdum porttitor.</p>
+					<p th:text="${per.InfoPersonal}"> </p>
 				</div>
 			</article>
 			<div class="clear"></div>
@@ -47,27 +46,21 @@
 		
 		<section>
 			<div class="sectionTitle">
-				<h1>Work Experience</h1>
+				<h1>Experiencia</h1>
 			</div>
 			
 			<div class="sectionContent">
 				<article>
-					<h2>Job Title at Company</h2>
-					<p class="subDetails">April 2011 - Present</p>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ultricies massa et erat luctus hendrerit. Curabitur non consequat enim. Vestibulum bibendum mattis dignissim. Proin id sapien quis libero interdum porttitor.</p>
+					<h2 th:text="${per.Tab1}"></h2>
+					<p class="subDetails" th:text="${per.AnoTab1}"> </p>
+					<p th:text="${per.InfoTab1}" ></p>
 				</article>
-				
-				<article>
-					<h2>Job Title at Company</h2>
-					<p class="subDetails">Janruary 2007 - March 2011</p>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ultricies massa et erat luctus hendrerit. Curabitur non consequat enim. Vestibulum bibendum mattis dignissim. Proin id sapien quis libero interdum porttitor.</p>
-				</article>
-				
-				<article>
-					<h2>Job Title at Company</h2>
-					<p class="subDetails">October 2004 - December 2006</p>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ultricies massa et erat luctus hendrerit. Curabitur non consequat enim. Vestibulum bibendum mattis dignissim. Proin id sapien quis libero interdum porttitor.</p>
-				</article>
+
+                <article>
+                    <h2 th:text="${per.Tab2}"></h2>
+                    <p class="subDetails" th:text="${per.AnoTab2}"> </p>
+                    <p th:text="${per.InfoTab2}" ></p>
+                </article>
 			</div>
 			<div class="clear"></div>
 		</section>
@@ -75,19 +68,19 @@
 		
 		<section>
 			<div class="sectionTitle">
-				<h1>Key Skills</h1>
+				<h1>Habilidades</h1>
 			</div>
 			
 			<div class="sectionContent">
 				<ul class="keySkills">
-					<li>A Key Skill</li>
-					<li>A Key Skill</li>
-					<li>A Key Skill</li>
-					<li>A Key Skill</li>
-					<li>A Key Skill</li>
-					<li>A Key Skill</li>
-					<li>A Key Skill</li>
-					<li>A Key Skill</li>
+					<li th:text="${per.Hab1}"></li>
+                    <li th:text="${per.Hab2}"></li>
+                    <li th:text="${per.Hab3}"></li>
+                    <li th:text="${per.Hab4}"></li>
+                    <li th:text="${per.Hab5}"></li>
+                    <li th:text="${per.Hab6}"></li>
+                    <li th:text="${per.Hab7}"></li>
+                    <li th:text="${per.Hab8}"></li>
 				</ul>
 			</div>
 			<div class="clear"></div>
@@ -96,21 +89,20 @@
 		
 		<section>
 			<div class="sectionTitle">
-				<h1>Education</h1>
+				<h1>Educación</h1>
 			</div>
 			
 			<div class="sectionContent">
 				<article>
-					<h2>College/University</h2>
-					<p class="subDetails">Qualification</p>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ultricies massa et erat luctus hendrerit. Curabitur non consequat enim.</p>
+					<h2 th:text="${per.Uni1}"> <li ></li></h2>
+					<p class="subDetails" th:text="${per.Grado1}"></p>
+					<p th:text="${per.InfoU1}"></p>
 				</article>
-				
-				<article>
-					<h2>College/University</h2>
-					<p class="subDetails">Qualification</p>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ultricies massa et erat luctus hendrerit. Curabitur non consequat enim.</p>
-				</article>
+                <article>
+                    <h2 th:text="${per.Uni2}"> <li ></li></h2>
+                    <p class="subDetails" th:text="${per.Grado2}"></p>
+                    <p th:text="${per.InfoU3}"></p>
+                </article>
 			</div>
 			<div class="clear"></div>
 		</section>

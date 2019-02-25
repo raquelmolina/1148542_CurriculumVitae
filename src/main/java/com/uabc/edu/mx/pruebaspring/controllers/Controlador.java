@@ -13,7 +13,7 @@ public class Controlador {
         Persona p = new Persona();
         p.setNombre("Raquel Itzel Molina Rodriguez");
         p.setOcupacion("Estudiate");
-        p.setSitio("https://raquelmolina8.wixsite.com/lscraquelmolina/");
+        p.setSitio("https:/lscraquelmolina/");
         p.setCorreo("raquel.molina@uabc.edu.mx");
         p.setContacto("686-120-07-33");
         p.setInfoPersonal("Actualmente estudiando Sistemas Computacionales, con más de 6 años de experiencia en con el uso y manejo de la paquetería Microsoft Office.\n" +
